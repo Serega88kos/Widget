@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Service</string>
+    <string name="weapon">1</string>
+    <string name="heroes">2</string>
+    <string name="calc">ОК</string>
+    <string name="start">СТАРТ</string>
+    <string name="stop">СТОП</string>
+</resources>

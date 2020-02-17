@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weapon" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/w1"
+            android:layout_width="25pt"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10pt"
+
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:labelFor="@id/w1"
+            android:maxLength="3"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/w2"
+            android:layout_width="25pt"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:labelFor="@id/w2"
+            android:maxLength="3"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/w3"
+            android:layout_width="25pt"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:labelFor="@id/w3"
+            android:maxLength="3"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/w4"
+            android:layout_width="25pt"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10pt"
+
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:labelFor="@id/w4"
+            android:maxLength="3"
+            android:maxLines="1" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/heroes"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/h1"
+            android:layout_width="25pt"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10pt"
+
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:labelFor="@id/h1"
+            android:maxLength="3"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/h2"
+            android:layout_width="25pt"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:labelFor="@id/h2"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/h3"
+            android:layout_width="25pt"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:labelFor="@id/h3"
+            android:maxLength="3"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/h4"
+            android:layout_width="25pt"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10pt"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:labelFor="@id/h4"
+            android:maxLength="3"
+            android:maxLines="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/butRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calc" />
+
+        <TextView
+            android:id="@+id/minlvl"
+            android:layout_width="10pt"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>
