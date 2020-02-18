@@ -7,6 +7,7 @@ import android.graphics.PixelFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,12 +23,8 @@ import android.widget.Toast;
 
 public class flt extends Activity implements View.OnClickListener {
 
-    private WindowManager windowManager;
-    private LinearLayout chatHead;
-    private WindowManager.LayoutParams params;
-
     private EditText Tw1, Tw2, Tw3, Tw4, Th1, Th2, Th3, Th4;
-    private TextView minlvl;
+    private TextView result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +38,7 @@ public class flt extends Activity implements View.OnClickListener {
         Th2 = findViewById(R.id.h2);
         Th3 = findViewById(R.id.h3);
         Th4 = findViewById(R.id.h4);
-        minlvl = findViewById(R.id.minlvl);
+        result = findViewById(R.id.result);
         Button butRes = findViewById(R.id.butOK);
         butRes.setOnClickListener(this);
 
@@ -51,7 +48,7 @@ public class flt extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         int w2, w3, w4, h2, h3, h4;
         double calc;
-        double mincalc;
+//        double mincalc;
 
         if (TextUtils.isEmpty(Tw1.getText().toString()) ||
                 TextUtils.isEmpty(Tw2.getText().toString()) ||
@@ -65,14 +62,20 @@ public class flt extends Activity implements View.OnClickListener {
         }
 
         w2 = Integer.parseInt(Tw2.getText().toString());
+        Tw2.setInputType(InputType.TYPE_CLASS_NUMBER);
         w3 = Integer.parseInt(Tw3.getText().toString());
+        Tw3.setInputType(InputType.TYPE_CLASS_NUMBER);
         w4 = Integer.parseInt(Tw4.getText().toString());
+        Tw4.setInputType(InputType.TYPE_CLASS_NUMBER);
         h2 = Integer.parseInt(Th2.getText().toString());
+        Th2.setInputType(InputType.TYPE_CLASS_NUMBER);
         h3 = Integer.parseInt(Th3.getText().toString());
+        Th3.setInputType(InputType.TYPE_CLASS_NUMBER);
         h4 = Integer.parseInt(Th4.getText().toString());
+        Th4.setInputType(InputType.TYPE_CLASS_NUMBER);
 
-        calc = (w2 + w3 + w4 + h2 + h3 + h4) / (double) 60;
-        mincalc = calc - 2.51;
-        minlvl.setText(String.format("%.0f", Math.floor(mincalc)));
+        calc = ((w2 + w3 + w4 + h2 + h3 + h4) / (double) 60)-2.51;
+//        mincalc = calc - 2.51;
+        result.setText(String.format("%.0f", Math.floor(calc)));
     }
 }
