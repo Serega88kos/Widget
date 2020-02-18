@@ -2,8 +2,9 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="120pt"
+    android:layout_height="80pt"
+    android:background="@color/background"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -136,8 +137,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+
         <Button
-            android:id="@+id/butRes"
+            android:id="@+id/butOK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/calc" />

@@ -42,7 +42,7 @@ public class flt extends Activity implements View.OnClickListener {
         Th3 = findViewById(R.id.h3);
         Th4 = findViewById(R.id.h4);
         minlvl = findViewById(R.id.minlvl);
-        Button butRes = findViewById(R.id.butRes);
+        Button butRes = findViewById(R.id.butOK);
         butRes.setOnClickListener(this);
 
     }

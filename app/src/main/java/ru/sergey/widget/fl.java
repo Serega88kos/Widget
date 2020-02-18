@@ -1,25 +1,15 @@
 package ru.sergey.widget;
 
-import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
-import android.os.Build;
-import android.os.Bundle;
 import android.os.IBinder;
-import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class fl extends Service {
 
@@ -30,7 +20,8 @@ public class fl extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-
+  //      Intent intent = new Intent(this, flt.class);
+  //      startActivity(intent);
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
         params = new WindowManager.LayoutParams(
@@ -55,15 +46,32 @@ public class fl extends Service {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_MOVE) {
-                    params.height = (int) event.getRawY();
-                    windowManager.updateViewLayout(chatHead, params);
-
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        shouldClick = true;
+                        initialX = params.x;
+                        initialY = params.y;
+                        initialTouchX = event.getRawX();
+                        initialTouchY = event.getRawY();
+                        return true;
+                    case MotionEvent.ACTION_UP:
+                        if(shouldClick)
+                        return true;
+                    case MotionEvent.ACTION_MOVE:
+                        shouldClick = false;
+                        params.x = initialX
+                                + (int) (event.getRawX() - initialTouchX);
+                        params.y = initialY
+                                + (int) (event.getRawY() - initialTouchY);
+                        windowManager.updateViewLayout(chatHead, params);
+                        return true;
                 }
                 return false;
             }
         });
         windowManager.addView(chatHead, params);
+
+
     }
 
     @Override
@@ -74,4 +82,5 @@ public class fl extends Service {
     }
     @Override
     public IBinder onBind(Intent intent) {return null;}
+
 }
