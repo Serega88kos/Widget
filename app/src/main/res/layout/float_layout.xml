@@ -108,6 +108,7 @@
             android:importantForAutofill="no"
             android:inputType="number"
             android:labelFor="@id/h2"
+            android:maxLength="3"
             android:maxLines="1" />
 
         <EditText

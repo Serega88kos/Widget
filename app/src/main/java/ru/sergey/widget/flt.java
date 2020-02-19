@@ -26,6 +26,7 @@ public class flt extends Activity implements View.OnClickListener {
     private EditText Tw1, Tw2, Tw3, Tw4, Th1, Th2, Th3, Th4;
     private TextView result;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +49,6 @@ public class flt extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         int w2, w3, w4, h2, h3, h4;
         double calc;
-//        double mincalc;
 
         if (TextUtils.isEmpty(Tw1.getText().toString()) ||
                 TextUtils.isEmpty(Tw2.getText().toString()) ||
@@ -75,7 +75,6 @@ public class flt extends Activity implements View.OnClickListener {
         Th4.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         calc = ((w2 + w3 + w4 + h2 + h3 + h4) / (double) 60)-2.51;
-//        mincalc = calc - 2.51;
         result.setText(String.format("%.0f", Math.floor(calc)));
     }
 }
