@@ -20,8 +20,7 @@ public class fl extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-  //      Intent intent = new Intent(this, flt.class);
-  //      startActivity(intent);
+
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
         params = new WindowManager.LayoutParams(
@@ -70,7 +69,8 @@ public class fl extends Service {
             }
         });
         windowManager.addView(chatHead, params);
-
+  //      Intent intent = new Intent(this, flt.class);
+  //      startActivity(intent);
 
     }
 

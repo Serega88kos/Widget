@@ -40,8 +40,8 @@ public class flt extends Activity implements View.OnClickListener {
         Th3 = findViewById(R.id.h3);
         Th4 = findViewById(R.id.h4);
         result = findViewById(R.id.result);
-        Button butRes = findViewById(R.id.butOK);
-        butRes.setOnClickListener(this);
+//        Button butRes = findViewById(R.id.butOK);
+//        butRes.setOnClickListener(this);
 
     }
 
