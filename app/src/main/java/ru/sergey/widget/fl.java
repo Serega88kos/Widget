@@ -3,6 +3,7 @@ package ru.sergey.widget;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.os.Build;
 import android.os.IBinder;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -17,18 +18,30 @@ public class fl extends Service {
     private LinearLayout chatHead;
     private WindowManager.LayoutParams params;
 
+
+
     @Override
     public void onCreate() {
         super.onCreate();
 
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
-        params = new WindowManager.LayoutParams(
-                WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.TYPE_PHONE,
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
-                PixelFormat.TRANSLUCENT);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            params = new WindowManager.LayoutParams(
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                    PixelFormat.TRANSLUCENT);
+        }
+        else
+            params = new WindowManager.LayoutParams(
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.TYPE_PHONE,
+                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                    PixelFormat.TRANSLUCENT);
+
 
         params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL;
         params.x = 100;
@@ -58,16 +71,16 @@ public class fl extends Service {
                         return true;
                     case MotionEvent.ACTION_MOVE:
                         shouldClick = false;
-                        params.x = initialX
-                                + (int) (event.getRawX() - initialTouchX);
-                        params.y = initialY
-                                + (int) (event.getRawY() - initialTouchY);
+                        params.x = initialX + (int) (event.getRawX() - initialTouchX);
+                        params.y = initialY + (int) (event.getRawY() - initialTouchY);
                         windowManager.updateViewLayout(chatHead, params);
                         return true;
                 }
                 return false;
             }
+
         });
+
         windowManager.addView(chatHead, params);
   //      Intent intent = new Intent(this, flt.class);
   //      startActivity(intent);
@@ -80,6 +93,8 @@ public class fl extends Service {
         if (chatHead != null)
             windowManager.removeView(chatHead);
     }
+
+
     @Override
     public IBinder onBind(Intent intent) {return null;}
 
