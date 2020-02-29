@@ -1,5 +1,6 @@
 package ru.sergey.widget;
 
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
@@ -20,6 +21,7 @@ public class fl extends Service {
 
 
 
+    @SuppressLint({"ClickableViewAccessibility", "InflateParams"})
     @Override
     public void onCreate() {
         super.onCreate();
@@ -54,23 +56,25 @@ public class fl extends Service {
             private int initialY;
             private float initialTouchX;
             private float initialTouchY;
-            private boolean shouldClick;
+ //           private boolean shouldClick;
+
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        shouldClick = true;
+ //                       shouldClick = true;
                         initialX = params.x;
                         initialY = params.y;
                         initialTouchX = event.getRawX();
                         initialTouchY = event.getRawY();
                         return true;
                     case MotionEvent.ACTION_UP:
-                        if(shouldClick)
+//                        if(shouldClick)
+                        v.performClick();
                         return true;
                     case MotionEvent.ACTION_MOVE:
-                        shouldClick = false;
+ //                       shouldClick = false;
                         params.x = initialX + (int) (event.getRawX() - initialTouchX);
                         params.y = initialY + (int) (event.getRawY() - initialTouchY);
                         windowManager.updateViewLayout(chatHead, params);
@@ -93,6 +97,8 @@ public class fl extends Service {
         if (chatHead != null)
             windowManager.removeView(chatHead);
     }
+
+
 
 
     @Override

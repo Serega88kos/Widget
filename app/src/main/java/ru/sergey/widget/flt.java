@@ -1,25 +1,14 @@
 package ru.sergey.widget;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Intent;
-import android.graphics.PixelFormat;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.util.Locale;
 
 public class flt extends Activity implements View.OnClickListener {
 
@@ -75,6 +64,6 @@ public class flt extends Activity implements View.OnClickListener {
         Th4.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         calc = ((w2 + w3 + w4 + h2 + h3 + h4) / (double) 60)-2.51;
-        result.setText(String.format("%.0f", Math.floor(calc)));
+        result.setText(String.format(Locale.getDefault(),"%.0f", Math.floor(calc)));
     }
 }
