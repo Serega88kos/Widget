@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.Build;
 import android.os.IBinder;
-import android.text.InputType;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -51,7 +50,7 @@ public class Two extends Service implements View.OnClickListener {
         params.x = 100;
         params.y = 100;
 
-        chatHead = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.float_layout, null);
+        chatHead = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.two_layout, null);
         chatHead.setOnTouchListener(new View.OnTouchListener() {
             private int initialX;
             private int initialY;
