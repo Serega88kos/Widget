@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -114,6 +115,8 @@ public class Two extends Service implements View.OnClickListener {
         Th3 = v.findViewById(R.id.h3);
         Th4 = v.findViewById(R.id.h4);
         result = v.findViewById(R.id.result);
+        Button butOk = v.findViewById(R.id.butOK);
+        butOk.setOnClickListener(this);
 
         if (TextUtils.isEmpty(Tw1.getText().toString()) ||
                 TextUtils.isEmpty(Tw2.getText().toString()) ||
@@ -140,6 +143,6 @@ public class Two extends Service implements View.OnClickListener {
         //Th4.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         calc = ((w2 + w3 + w4 + h2 + h3 + h4) / (double) 60) - 2.51;
-        result.setText(String.format(Locale.getDefault(), "%.0f", Math.floor(calc)));
+        result.setText(String.format("Результат" + Locale.getDefault(), "%.0f", Math.floor(calc)));
     }
 }
