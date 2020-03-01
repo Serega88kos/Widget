@@ -37,8 +37,7 @@ public class Two extends Service implements View.OnClickListener {
                     WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
                     WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                     PixelFormat.TRANSLUCENT);
-        }
-        else
+        } else
             params = new WindowManager.LayoutParams(
                     WindowManager.LayoutParams.WRAP_CONTENT,
                     WindowManager.LayoutParams.WRAP_CONTENT,
@@ -95,7 +94,9 @@ public class Two extends Service implements View.OnClickListener {
     }
 
     @Override
-    public IBinder onBind(Intent intent) {return null;}
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
 
     @Override
     public void onClick(View v) {
@@ -138,7 +139,7 @@ public class Two extends Service implements View.OnClickListener {
         h4 = Integer.parseInt(Th4.getText().toString());
         //Th4.setInputType(InputType.TYPE_CLASS_NUMBER);
 
-        calc = ((w2 + w3 + w4 + h2 + h3 + h4) / (double) 60)-2.51;
-        result.setText(String.format(Locale.getDefault(),"%.0f", Math.floor(calc)));
+        calc = ((w2 + w3 + w4 + h2 + h3 + h4) / (double) 60) - 2.51;
+        result.setText(String.format(Locale.getDefault(), "%.0f", Math.floor(calc)));
     }
 }
