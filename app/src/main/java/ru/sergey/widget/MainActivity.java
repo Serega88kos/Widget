@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                startService(new Intent(getApplication(), fl.class));
+                startService(new Intent(getApplication(), Two.class));
 
             }
         });
@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                stopService(new Intent(getApplication(), fl.class));
+                stopService(new Intent(getApplication(), Two.class));
 
             }
         });
