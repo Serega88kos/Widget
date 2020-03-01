@@ -128,6 +128,14 @@ public class Two extends Service implements View.OnClickListener {
                 TextUtils.isEmpty(Th4.getText().toString())) {
             return;
         }
+        Tw1.setText("210");
+        Tw2.setText("210");
+        Tw3.setText("210");
+        Tw4.setText("210");
+        Th1.setText("210");
+        Th2.setText("210");
+        Th3.setText("210");
+        Th4.setText("210");
 
         w2 = Integer.parseInt(Tw2.getText().toString());
         //Tw2.setInputType(InputType.TYPE_CLASS_NUMBER);
