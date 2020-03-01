@@ -127,17 +127,17 @@ public class Two extends Service implements View.OnClickListener {
         }
 
         w2 = Integer.parseInt(Tw2.getText().toString());
-        Tw2.setInputType(InputType.TYPE_CLASS_NUMBER);
+        //Tw2.setInputType(InputType.TYPE_CLASS_NUMBER);
         w3 = Integer.parseInt(Tw3.getText().toString());
-        Tw3.setInputType(InputType.TYPE_CLASS_NUMBER);
+        //Tw3.setInputType(InputType.TYPE_CLASS_NUMBER);
         w4 = Integer.parseInt(Tw4.getText().toString());
-        Tw4.setInputType(InputType.TYPE_CLASS_NUMBER);
+        //Tw4.setInputType(InputType.TYPE_CLASS_NUMBER);
         h2 = Integer.parseInt(Th2.getText().toString());
-        Th2.setInputType(InputType.TYPE_CLASS_NUMBER);
+        //Th2.setInputType(InputType.TYPE_CLASS_NUMBER);
         h3 = Integer.parseInt(Th3.getText().toString());
-        Th3.setInputType(InputType.TYPE_CLASS_NUMBER);
+        //Th3.setInputType(InputType.TYPE_CLASS_NUMBER);
         h4 = Integer.parseInt(Th4.getText().toString());
-        Th4.setInputType(InputType.TYPE_CLASS_NUMBER);
+        //Th4.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         calc = ((w2 + w3 + w4 + h2 + h3 + h4) / (double) 60)-2.51;
         result.setText(String.format(Locale.getDefault(),"%.0f", Math.floor(calc)));
